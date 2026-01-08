@@ -1,0 +1,182 @@
+<html>
+    <head>
+            <title>HTML Practice Page</title>
+            <meta name="description" content="This is a practice page for HTML">  
+            </head> 
+            <style>
+          body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+          }
+          #main-heading {
+            text-align: center;
+            font-size: 40px;
+            color: #333;
+            text-shadow: 2px 2px 4px gray;
+          }
+          #main-heading:hover {
+            color: darkred;
+          }
+          h3 {
+            color: #ffb6c1;        
+            letter-spacing: 2px;
+            opacity: 0.9;
+          }
+
+          /* 3. Paragraph Glow-Up (first p) */
+          .intro-paragraph {
+            background-color: #e8f4ff;
+            border-radius: 10px;
+            padding: 15px;
+            line-height: 1.6;
+          }
+
+          /* 4. Important Info (second p) */
+          #formatted-paragraph {
+            border: 4px solid #ff6666;
+            background-color: #ffe5e5;
+            padding: 15px;
+            transform: rotate(-1deg);
+          }
+
+          /* 5. Fancy <hr> */
+          hr {
+            width: 150px;
+            height: 4px;
+            background-color: purple;
+            border: none;
+            border-radius: 5px;
+            margin: 20px auto;
+          }
+
+          /* 6. Hacker Mode <pre> */
+          pre {
+            background-color: #111;
+            color: #00ff00;
+            font-family: monospace;
+            padding: 15px;
+            border-radius: 5px;
+          }
+
+          /* 7. Pinterest <ul> */
+          .unordered-list {
+            list-style: none;
+            padding: 10px;
+            background-color: #fff0f5;
+            border-radius: 8px;
+          }
+
+          .unordered-list li {
+            margin: 8px 0;
+          }
+
+          /* 8. Boss <ol> */
+          #ordered-list {
+            list-style-type: upper-roman;
+            font-weight: bold;
+            padding-left: 25px;
+          }
+
+          #ordered-list li {
+            margin: 10px 0;
+          }
+
+          /* 9. Link that hides as a link */
+          .link {
+            text-decoration: none;
+            color: #666;
+          }
+
+          .link:hover {
+            text-decoration: underline;
+            color: #0077cc;
+          }
+
+          /* 10. Card <div> */
+          div {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            margin-top: 10px;
+          }
+
+          /* 11. Accent <span> */
+          span {
+            color: #e74c3c;
+            font-size: 18px;
+            font-weight: bold;
+          }
+          #submit-button {
+            padding: 10px 25px;
+            border-radius: 20px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+          }
+          #submit-button:hover {
+            background-color: #2874a6;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            transform: scale(1.03);
+          }
+          .footer {
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+            margin-top: 30px;
+          }
+        </style>
+
+            <body>  
+            <h1 id="main-heading">HTML Practice Page</h1>
+            <h3 style="color: blue;">HTML Basics</h3>
+            <p class="intro-paragraph">
+                HTML is a markup language. It uses <b>tags</b> to create webpages
+                HTML has <strong>many elements</strong>
+                You can use <i>different tags</i> for 
+                <em>different purposes</em>.
+               
+            </p>
+        
+        
+            <p id="formatted-paragraph">
+                HTML <mark>is</mark> a <mark>markup language</mark>
+                Math example: 2<sup>3</sup> = 8
+                water formula is H<sub>2</sub>O 
+                <br>
+                this is a page 
+                for previewing 
+                html code   
+            </br>
+            </p>
+                
+                <hr style="color: rgb(41, 232, 45);">
+
+                <pre style="color: rgb(28, 27, 27);">
+                    <ul class="unordered-list">
+                        <li>HTML is a markup language</li>
+                        <li>HTML has many elements</li>
+                        <li>You can use different tags for different purposes</li>
+                    </ul>   
+                    <ol id="ordered-list">
+                        <li>Playing Video Games</li>
+                        <li>Reading Books</li>
+                        <li>Traveling</li>
+                    </ol>
+                         </pre>
+  
+                    <a href="https://www.w3schools.com/html/html_exercises.asp" target="_blank" class="link">Link</a> 
+                    <div>
+                       Html is used to create websites 
+                       <span style="color: rgb(29, 27, 27);">HTML is a markup language</span> 
+                    </div>
+                    <button id="submit-button">Submit</button>
+                    <footer class="footer">Copyright 2026</footer>
+        </body>
+    
+</html>
