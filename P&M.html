@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Padding Margin Tasks</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .note {
+            background-color: lightyellow;
+            border-left: 3px solid rgb(37, 134, 119);
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .box {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .pink { background-color: pink; }
+        .blue { background-color: rgb(29, 143, 181); }
+        .green { background-color: lightgreen; }
+        .yellow { background-color: yellow; }
+        .gray { background-color: lightgray; }
+        .white { background-color: white; }
+    </style>
+</head>
+<body>
+
+    <h1>SECTION A: FOUNDATIONS</h1>
+
+    <h2>Task 1: Content vs Padding</h2>
+    <div class="box">Text with padding: 20px</div>
+    <div class="note">
+        Q1: Yes<br>Q2: Yes
+    </div>
+
+    <h2>Task 2: Content vs Margin</h2>
+    <div class="box blue">Text with margin: 40px</div>
+    <div class="note">
+        Q1: No<br>Q2: No
+    </div>
+
+    <h2>Task 3: Padding and Background</h2>
+    <div class="gray" style="padding: 20px;">
+        <div class="pink" style="padding: 30px; border: 2px solid black;">Padding Box</div>
+    </div>
+    <div class="gray" style="padding: 20px;">
+        <div class="blue" style="margin: 30px; padding: 10px; border: 2px solid black;">Margin Box</div>
+    </div>
+    <div class="note">
+        Q1: Padding space<br>Q2: Margin is outside<br>Q3: Content - Padding - Border - Margin
+    </div>
+
+    <h2>Task 4: Side-Specific Spacing</h2>
+    <div class="green" style="padding: 10px 50px 30px 70px; border: 2px solid black;">
+        padding: 10px 50px 30px 70px
+    </div>
+    <div class="note">
+        Top: 10px, Right: 50px, Bottom: 30px, Left: 70px
+    </div>
+
+    <h2>Task 5: Invalid and Extreme Values</h2>
+    <div class="yellow" style="padding: 10px; border: 2px solid black;">Negative Padding (ignored)</div>
+    <div class="gray" style="padding: 15px; border: 2px solid black;">Reference</div>
+    <div class="blue" style="margin: -20px; padding: 15px; border: 2px solid black;">Negative Margin (works)</div>
+    <div class="gray" style="padding: 15px; border: 2px solid black;">Reference</div>
+    <div class="note">
+        padding: -20px = INVALID | margin: -20px = VALID
+    </div>
+
+    <hr>
+    <h1>SECTION B: LAYOUT INTERACTION</h1>
+
+    <h2>Task 6: Margin Collapse</h2>
+    <div class="white" style="padding: 20px; border: 2px dashed gray;">
+        <div class="pink" style="padding: 20px; margin-bottom: 50px;">Box 1: margin-bottom: 50px</div>
+        <div class="blue" style="padding: 20px; margin-top: 30px;">Box 2: margin-top: 30px</div>
+    </div>
+    <div class="note">
+        Final space = 50px (not 80px)
+    </div>
+
+    <h2>Task 7: Inline vs Block</h2>
+    <div class="green box">DIV (block)</div>
+    <div>Text <span class="yellow" style="padding: 20px; margin: 20px; border: 2px solid black;">SPAN (inline)</span> Text</div>
+    <div>Text <span class="blue" style="padding: 20px; margin: 20px; border: 2px solid black; display: inline-block;">INLINE-BLOCK</span> Text</div>
+    <div class="note">
+        Inline: horizontal works, vertical doesn't
+    </div>
+
+    <hr>
+    <h1>SECTION C: FLEXBOX BASICS</h1>
+
+    <h2>Task 8: Why Flex Exists</h2>
+    <div class="white" style="border: 2px solid black; padding: 10px;">
+        <div class="blue box">Box 1</div>
+        <div class="blue box">Box 2</div>
+        <div class="blue box">Box 3</div>
+    </div>
+    <div class="white" style="border: 2px solid black; padding: 10px; display: flex;">
+        <div class="blue box">Box 1</div>
+        <div class="blue box">Box 2</div>
+        <div class="blue box">Box 3</div>
+    </div>
+    <div class="note">
+        1. Items go horizontal<br>2. Same height<br>3. Flexible size
+    </div>
+
+    <h2>Task 9: Padding Inside Flex Items</h2>
+    <div class="white" style="border: 2px solid black; padding: 10px; display: flex;">
+        <div class="pink" style="padding: 30px; margin: 5px;">Item 1</div>
+        <div class="pink" style="padding: 30px; margin: 5px;">Item 2</div>
+        <div class="pink" style="padding: 30px; margin: 5px;">Item 3</div>
+    </div>
+    <div class="note">
+        Q1: No<br>Q2: Yes<br>Q3: Buttons and cards
+    </div>
+
+    <h2>Task 10: Margin vs Gap</h2>
+    <div class="white" style="border: 2px solid black; padding: 10px; display: flex;">
+        <div class="green" style="padding: 15px; margin: 20px;">Item 1</div>
+        <div class="green" style="padding: 15px; margin: 20px;">Item 2</div>
+    </div>
+    <div class="white" style="border: 2px solid black; padding: 10px; display: flex; gap: 20px;">
+        <div class="yellow" style="padding: 15px;">Item 1</div>
+        <div class="yellow" style="padding: 15px;">Item 2</div>
+    </div>
+    <div class="note">
+        Gap only between items
+    </div>
+
+    <h2>Task 11: Main Axis vs Cross Axis</h2>
+    <div class="white" style="border: 2px solid black; padding: 10px; display: flex;">
+        <div class="green" style="padding: 20px; margin: 10px;">Item 1</div>
+        <div class="green" style="padding: 20px; margin: 10px;">Item 2</div>
+    </div>
+    <div class="white" style="border: 2px solid black; padding: 10px; display: flex; flex-direction: column;">
+        <div class="green" style="padding: 20px; margin: 10px;">Item 1</div>
+        <div class="green" style="padding: 20px; margin: 10px;">Item 2</div>
+    </div>
+    <div class="note">
+        Row: main = horizontal<br>Column: main = vertical
+    </div>
+
+    <hr>
+    <h1>SECTION D: CONTROL AND ALIGNMENT</h1>
+
+    <h2>Task 12: justify-content vs margin</h2>
+    <div class="white" style="border: 2px solid black; padding: 10px; display: flex; justify-content: space-between;">
+        <div class="blue" style="padding: 15px;">Item 1</div>
+        <div class="blue" style="padding: 15px;">Item 2</div>
+        <div class="blue" style="padding: 15px;">Item 3</div>
+    </div>
+    <div class="note">
+        Container controls layout
+    </div>
+
+    <h2>Task 13: align-items and Padding</h2>
+    <div class="white" style="border: 2px solid black; padding: 10px; height: 200px; display: flex; align-items: center;">
+        <div class="pink" style="padding: 10px; margin: 10px;">Small</div>
+        <div class="blue" style="padding: 30px; margin: 10px;">Medium</div>
+        <div class="green" style="padding: 50px; margin: 10px;">Large</div>
+    </div>
+    <div class="note">
+        Padding doesn't affect centering
+    </div>
+
+    <h2>Task 14: Auto Margin</h2>
+    <div class="white" style="border: 2px solid black; padding: 10px; display: flex;">
+        <div class="blue" style="padding: 15px;">Left</div>
+        <div class="pink" style="padding: 15px; margin-left: auto;">Right</div>
+    </div>
+    <div class="note">
+        Auto margin pushes to opposite side
+    </div>
+
+    <hr>
+    <h1>SECTION E: DESIGN DECISIONS</h1>
+
+    <h2>Task 15: Button Design</h2>
+    <div class="blue" style="padding: 15px 30px; margin: 20px; border: 2px solid black;">Click Me</div>
+    <div class="note">
+        Padding increases click area
+    </div>
+
+    <h2>Task 16: Card Component</h2>
+    <div class="white" style="border: 2px solid gray; padding: 20px; width: 300px;">
+        <div class="blue" style="height: 150px; margin-bottom: 15px;">Image</div>
+        <div style="font-size: 20px; margin-bottom: 10px;">Card Title</div>
+        <div style="margin-bottom: 15px;">Card text.</div>
+        <div class="blue" style="padding: 10px 20px; border: 2px solid black;">Action</div>
+    </div>
+    <div class="note">
+        Padding: inside<br>Margin: between
+    </div>
+
+    <h2>Task 17: Box Size Illusion</h2>
+    <div class="pink" style="width: 200px; height: 100px; padding: 40px; border: 2px solid black; margin-bottom: 20px;">Box A (padding)</div>
+    <div class="blue" style="width: 200px; height: 100px; margin: 40px; border: 2px solid black;">Box B (margin)</div>
+    <div class="note">
+        Box A appears larger
+    </div>
+
+    <hr>
+    <h1>SECTION F: ADVANCED</h1>
+
+    <h2>Task 18: Broken Layout</h2>
+    <div class="white" style="border: 2px solid pink; padding: 10px; width: 400px; display: flex;">
+        <div class="yellow" style="width: 150px; padding: 40px;">Item 1</div>
+        <div class="yellow" style="width: 150px; padding: 40px;">Item 2</div>
+    </div>
+    <div class="white" style="border: 2px solid green; padding: 10px; width: 400px; display: flex;">
+        <div class="blue" style="width: 150px; padding: 40px; box-sizing: border-box;">Item 1</div>
+        <div class="blue" style="width: 150px; padding: 40px; box-sizing: border-box;">Item 2</div>
+    </div>
+    <div class="note">
+        Solution: box-sizing: border-box
+    </div>
+
+    <h2>Task 19: When Margin Fails</h2>
+    <div class="pink" style="width: 200px; height: 100px; margin: auto; text-align: center; line-height: 100px;">Centered?</div>
+    <div class="white" style="border: 2px solid black; height: 200px; display: flex; justify-content: center; align-items: center;">
+        <div class="blue" style="width: 200px; height: 100px; text-align: center; line-height: 100px;">Centered!</div>
+    </div>
+    <div class="note">
+        Flexbox centers both ways
+    </div>
+
+    <h2>Task 20: Rule Formation</h2>
+    <div class="note">
+        <b>Never use padding:</b> Between elements<br>
+        <b>Never use margin:</b> Inside elements<br>
+        <b>Use flexbox:</b> For alignment
+    </div>
+
+</body>
+</html>
