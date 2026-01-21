@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Nature Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            color: #fff;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(5px);
+        }
+        header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+        main {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        aside {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            scroll-behavior: smooth;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255, 0, 150, 0.3), rgba(0, 200, 255, 0.3));
+            opacity: 0.4;
+            transition: opacity 0.5s;
+        }
+        .card:hover::after {
+            opacity: 0.7;
+        }
+        .card img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        .card p {
+            padding: 10px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+            backdrop-filter: blur(5px);
+        }
+        /* Animated gradient background overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 0, 150, 0.2), rgba(0, 200, 255, 0.2));
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Interactive Nature Gallery</h1>
+        <p>Engage your senses while learning CSS Grid!</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Landscapes</a>
+        <a href="#">Forests</a>
+        <a href="#">Mountains</a>
+        <a href="#">Water</a>
+    </nav>
+    <main>
+        <aside>
+            <h3>Filters</h3>
+            <ul>
+                <li><input type="checkbox"> Forest</li>
+                <li><input type="checkbox"> Mountains</li>
+                <li><input type="checkbox"> Water</li>
+            </ul>
+            <h4>Why this is perfect for Grid class:</h4>
+            <ul>
+                <li>Main is a 2-column grid (sidebar + gallery).</li>
+                <li>.gallery is a responsive scrollable grid of cards.</li>
+                <li>Students can change images & practice grid-template-columns, gaps, and alignment.</li>
+                <li>Hover effects & animated gradients make UI interactive.</li>
+            </ul>
+        </aside>
+        <section class="gallery">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=600&q=80"
+                    alt="Serene Field">
+                <p>Serene Field</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80"
+                    alt="Misty Forest">
+                <p>Misty Forest</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80"
+                    alt="Sunlit Woods">
+                <p>Sunlit Woods</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80"
+                    alt="Autumn Leaves">
+                <p>Autumn Leaves</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1501854140884-074bf2225877?auto=format&fit=crop&w=600&q=80"
+                    alt="Lake View">
+                <p>Lake View</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?auto=format&fit=crop&w=600&q=80"
+                    alt="Mountain Range">
+                <p>Mountain Range</p>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=600&q=80"
+                    alt="Deep Woods">
+                <p>Deep Woods</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?auto=format&fit=crop&w=600&q=80"
+                    alt="Winter Scene">
+                <p>Winter Scene</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=600&q=80"
+                    alt="Sunlight Branch">
+                <p>Sunlight Branch</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&q=80"
+                    alt="Bridge Walk">
+                <p>Bridge Walk</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=600&q=80"
+                    alt="River Calm">
+                <p>River Calm</p>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=600&q=80"
+                    alt="Starry Night">
+                <p>Starry Night</p>
+            </div>
+        </section>
+        <aside>
+            <h4>Why this is perfect for Grid class:</h4>
+            <ul>
+                <li>Main is a 2-column grid (sidebar + gallery).</li>
+                <li>.gallery is a responsive scrollable grid of cards.</li>
+                <li>Hover effects & animated gradients make UI interactive.</li>
+                <li>Students can change images & practice grid-template-columns, gaps, and alignment.</li>
+            </ul>
+            <section class="gallery">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=600&q=80"
+                        alt="Serene Field">
+                    <p>Serene Field</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80"
+                        alt="Misty Forest">
+                    <p>Misty Forest</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80"
+                        alt="Sunlit Woods">
+                    <p>Sunlit Woods</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80"
+                        alt="Autumn Leaves">
+                    <p>Autumn Leaves</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1501854140884-074bf2225877?auto=format&fit=crop&w=600&q=80"
+                        alt="Lake View">
+                    <p>Lake View</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?auto=format&fit=crop&w=600&q=80"
+                        alt="Mountain Range">
+                    <p>Mountain Range</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=600&q=80"
+                        alt="Deep Woods">
+                    <p>Deep Woods</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?auto=format&fit=crop&w=600&q=80"
+                        alt="Winter Scene">
+                    <p>Winter Scene</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=600&q=80"
+                        alt="Sunlight Branch">
+                    <p>Sunlight Branch</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=600&q=80"
+                        alt="Bridge Walk">
+                    <p>Bridge Walk</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=600&q=80"
+                        alt="River Calm">
+                    <p>River Calm</p>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=600&q=80"
+                        alt="Starry Night">
+                    <p>Starry Night</p>
+                </div>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <p>© 2026 Interactive Nature Gallery — CSS Grid Practice!</p>
+    </footer>
+</body>
+</html>
