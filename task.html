@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Hidden Gems</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+        }
+
+        .tag-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            color: #555;
+        }
+
+        /* Specific Tag Styles */
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        meter {
+            width: 100%;
+            height: 20px;
+        }
+
+        input,
+        button {
+            padding: 8px;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        button {
+            cursor: pointer;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        dialog {
+            border: none;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>5 Powerful HTML5 Tags</h1>
+
+        <!-- 1. The <meter> Tag -->
+        <div class="tag-block">
+            <h2>1. The &lt;meter&gt; Tag</h2>
+            <p>Visualizes a measurement within a known range.</p>
+            <label>Storage Usage:</label>
+            <meter min="0" max="100" low="30" high="80" optimum="10" value="65"></meter>
+            <span>65% Used</span>
+        </div>
+
+        <!-- 2. The <details> Tag -->
+        <div class="tag-block">
+            <h2>2. &lt;details&gt; &amp; &lt;summary&gt;</h2>
+            <details>
+                <summary>Click to view secret message</summary>
+                <p>This content is hidden by default! No JavaScript required.</p>
+            </details>
+        </div>
+
+        <!-- 3. The <datalist> Tag -->
+        <div class="tag-block">
+            <h2>3. The &lt;datalist&gt; Tag</h2>
+            <label>Choose a browser (Autocomplete):</label><br>
+            <input list="browsers" placeholder="Start typing...">
+            <datalist id="browsers">
+                <option value="Chrome">
+                <option value="Firefox">
+                <option value="Safari">
+                <option value="Edge">
+            </datalist>
+        </div>
+        
+
+        <!-- 4. The <output> Tag -->
+        <div class="tag-block">
+            <h2>4. The &lt;output&gt; Tag</h2>
+            <form oninput="result.value = parseInt(a.value) + parseInt(b.value)">
+                <input type="number" id="a" value="10" style="width: 60px;"> +
+                <input type="number" id="b" value="20" style="width: 60px;"> =
+                <output name="result" for="a b" style="font-weight: bold; font-size: 1.2rem;">30</output>
+            </form>
+        </div>
+
+        <!-- 5. The <dialog> Tag -->
+        <div class="tag-block" style="border-bottom: none;">
+            <h2>5. The &lt;dialog&gt; Tag</h2>
+            <button onclick="document.getElementById('myModal').showModal()">Open Native Modal</button>
+
+            <dialog id="myModal">
+                <h3>Native Modal Dialog</h3>
+                <p>This is a standard HTML element!</p>
+                <form method="dialog">
+                    <button>Close</button>
+                </form>
+            </dialog>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
