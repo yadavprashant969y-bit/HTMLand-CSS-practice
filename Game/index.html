@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Reaction Timer | Lights Out</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app-container">
+        <!-- Start Screen -->
+        <section id="start-screen" class="screen active">
+            <h1>GREEN <span class="f1-accent">LIGHT.</span></h1>
+            <p>React as soon as the sequence ends and the lights turn green.</p>
+            <div class="best-lap">Record: <span id="best-time-start">-- ms</span></div>
+            <button id="start-btn" class="f1-btn">Start Test</button>
+        </section>
+
+        <!-- Game Screen (Gantry) -->
+        <section id="game-screen" class="screen">
+            <div id="game-area"
+                style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer;">
+                <div class="lights-gantry">
+                    <div class="light-unit">
+                        <div class="led" id="l1a"></div>
+                        <div class="led" id="l1b"></div>
+                    </div>
+                    <div class="light-unit">
+                        <div class="led" id="l2a"></div>
+                        <div class="led" id="l2b"></div>
+                    </div>
+                    <div class="light-unit">
+                        <div class="led" id="l3a"></div>
+                        <div class="led" id="l3b"></div>
+                    </div>
+                    <div class="light-unit">
+                        <div class="led" id="l4a"></div>
+                        <div class="led" id="l4b"></div>
+                    </div>
+                    <div class="light-unit">
+                        <div class="led" id="l5a"></div>
+                        <div class="led" id="l5b"></div>
+                    </div>
+                </div>
+                <div id="status-text" class="status-label">Ready to start?</div>
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="screen">
+            <h2 id="result-status" class="status-label f1-accent">Reaction Time</h2>
+            <div id="reaction-time-result" class="result-time">0.245s</div>
+            <div class="best-lap">Best Performance: <span id="pb-result">-- ms</span></div>
+            <button id="restart-btn" class="f1-btn">New Attempt</button>
+            <button id="home-btn" class="f1-btn f1-btn-secondary">Paddock</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
