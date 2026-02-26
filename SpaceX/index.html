@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpaceX | Bootstrap Masterpiece</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Google Fonts: Orbitron & Inter -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body data-bs-theme="dark">
+    <!-- Star Background -->
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star" style="top: 20%; left: 80%; animation-delay: 1s;"></div>
+    <div class="shooting-star" style="top: 70%; left: 30%; animation-delay: 2s;"></div>
+
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">SPACEX</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom border-secondary">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#gallery">GALLERY</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pricing">LAUNCH</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                MISSIONS
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark border-secondary">
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#infoModal">About Us</a></li>
+                                <li><a class="dropdown-item" href="#contact">Contact</a></li>
+                                <li>
+                                    <hr class="dropdown-divider border-secondary" />
+                                </li>
+                                <li><a class="dropdown-item" href="#">Starship History</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3 mt-lg-0" role="search">
+                        <div class="input-group">
+                            <input class="form-control bg-dark text-white border-secondary" type="search"
+                                placeholder="Search Missions" aria-label="Search" />
+                            <button class="btn btn-outline-light" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <section id="home">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active"
+                    style="background-image: url('https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="carousel-caption">
+                        <h5>FALCON 9</h5>
+                        <p>The world's first orbital class reusable rocket. Falcon 9 is capable of carrying humans and
+                            payloads to Earth orbit and beyond.</p>
+                        <button class="btn btn-spacex">Learn More</button>
+                    </div>
+                </div>
+                <div class="carousel-item"
+                    style="background-image: url('https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="carousel-caption">
+                        <h5>STARSHIP</h5>
+                        <p>Service to Earth, Moon, Mars and Beyond. Starship is a fully reusable transportation system
+                            designed to carry both crew and cargo.</p>
+                        <button class="btn btn-spacex">View Starship</button>
+                    </div>
+                </div>
+                <div class="carousel-item"
+                    style="background-image: url('https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?q=80&w=2070&auto=format&fit=crop');">
+                    <div class="carousel-caption">
+                        <h5>STARLINK</h5>
+                        <p>High-speed internet across the globe. Low latency and high performance across the planet.</p>
+                        <button class="btn btn-spacex">Get Starlink</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+
+        <!-- Alerts Section -->
+        <div class="row mb-5 reveal">
+            <div class="col-12">
+                <div class="alert alert-dark alert-dismissible fade show border-secondary" role="alert"
+                    style="background: rgba(255,255,255,0.05);">
+                    <strong>MISSION LOG:</strong> Starlink-145 launch successfully deployed 60 satellites to low Earth
+                    orbit.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-info bg-transparent border-info text-info" role="alert">
+                    <i class="bi bi-broadcast me-2"></i> Upcoming: Crew-8 Mission to ISS scheduled for next month.
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="mb-5 reveal">
+            <h2 class="section-title">FLIGHT GALLERY</h2>
+            <div class="row g-2">
+                <div class="col-md-4 col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=2072&auto=format&fit=crop"
+                        class="img-fluid gallery-img w-100" alt="Space" data-bs-toggle="tooltip" title="Lifting Off" />
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1454789548928-9efd52dc4031?q=80&w=1780&auto=format&fit=crop"
+                        class="img-fluid gallery-img w-100" alt="Earth" data-bs-toggle="popover"
+                        data-bs-content="Orbiting Earth at 17,500 mph." />
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1974&auto=format&fit=crop"
+                        class="img-fluid gallery-img w-100" alt="Astronaut" />
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+                        class="img-fluid gallery-img w-100" alt="Satellite" />
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?q=80&w=2070&auto=format&fit=crop"
+                        class="img-fluid gallery-img w-100" alt="Launch" />
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1446776899648-aa78eefe8ed0?q=80&w=2072&auto=format&fit=crop"
+                        class="img-fluid gallery-img w-100" alt="Nebula" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing (Launching) Section -->
+        <section id="pricing" class="py-5 mb-5 px-4 text-center reveal">
+            <h2 class="section-title">LAUNCH COSTS</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4">
+                    <div class="card pricing-card h-100 py-4">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3 text-secondary">RIDE SHARE</h3>
+                            <h4 class="display-5 fw-bold mb-4">$275K <small class="text-secondary fs-6">/ slot</small>
+                            </h4>
+                            <ul class="list-unstyled mb-5 opacity-75">
+                                <li class="mb-2"><i class="bi bi-check2 text-info me-2"></i>50KG Payload Capacity
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check2 text-info me-2"></i>Standard Orbital Slot
+                                </li>
+                                <li class="mb-2 text-secondary"><i class="bi bi-x text-danger me-2"></i>Custom
+                                    Trajectory</li>
+                            </ul>
+                            <button class="btn btn-spacex w-100">BOOK NOW</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card pricing-card h-100 py-4" style="border: 1px solid rgba(0, 150, 255, 0.5);">
+                        <div class="card-body">
+                            <span class="badge bg-white text-black mb-3">MOST POPULAR</span>
+                            <h3 class="h5 mb-3">FALCON 9</h3>
+                            <h4 class="display-5 fw-bold mb-4">$67M <small class="text-secondary fs-6">/ launch</small>
+                            </h4>
+                            <ul class="list-unstyled mb-5 opacity-75">
+                                <li class="mb-2"><i class="bi bi-check2 text-info me-2"></i>22,800KG to LEO</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-info me-2"></i>Custom Mission Control
+                                </li>
+                                <li class="mb-2"><i class="bi bi-check2 text-info me-2"></i>Fairing Return Option
+                                </li>
+                            </ul>
+                            <button class="btn btn-spacex bg-white text-black w-100">CONFIGURE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card pricing-card h-100 py-4">
+                        <div class="card-body">
+                            <h3 class="h5 mb-3 text-secondary">STARSHIP</h3>
+                            <h4 class="display-5 fw-bold mb-4">$90M <small class="text-secondary fs-6">/ launch</small>
+                            </h4>
+                            <ul class="list-unstyled mb-5 opacity-75">
+                                <li class="mb-2"><i class="bi bi-check2 text-info me-2"></i>100,000KG to Orbit</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-info me-2"></i>Crew Capacity (100)</li>
+                                <li class="mb-2"><i class="bi bi-check2 text-info me-2"></i>Lunar Landing Support
+                                </li>
+                            </ul>
+                            <button class="btn btn-spacex w-100">CONTACT SALES</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forms Section -->
+        <section id="contact" class="mb-5 reveal">
+            <h2 class="section-title">JOIN THE MISSION</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card p-5 border-secondary text-start">
+                        <form class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label text-secondary">First Name</label>
+                                    <input type="text" class="form-control" id="firstName" required />
+                                    <div class="invalid-feedback">Required field.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label text-secondary">Last Name</label>
+                                    <input type="text" class="form-control" id="lastName" required />
+                                </div>
+                                <div class="col-12">
+                                    <label for="email" class="form-label text-secondary">Email Address</label>
+                                    <input type="email" class="form-control" id="email"
+                                        placeholder="astronaut@spacex.com" required />
+                                    <div class="invalid-feedback">Enter a valid email.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="interest" class="form-label text-secondary">Mission Interest</label>
+                                    <select class="form-select bg-dark text-white border-secondary" id="interest"
+                                        required>
+                                        <option value="">Choose Mission...</option>
+                                        <option>Starlink Beta</option>
+                                        <option>Commercial Launch</option>
+                                        <option>Lunar Expedition</option>
+                                        <option>Mars Mission</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label d-block text-secondary">Communication Mode</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="contactPref" id="prefEmail"
+                                            value="email" checked />
+                                        <label class="form-check-label" for="prefEmail">Email</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="contactPref"
+                                            id="prefDeepSpace" value="deepspace" />
+                                        <label class="form-check-label" for="prefDeepSpace">Deep Space Network</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter" checked />
+                                        <label class="form-check-label text-secondary" for="newsletter">I agree to the
+                                            Martian colonization terms of service</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-spacex w-100 py-3 mt-3" type="submit">SUBMIT
+                                        APPLICATION</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI Components Showcase -->
+        <section class="mb-5 text-center reveal">
+            <h2 class="section-title">MISSION STATUS</h2>
+            <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                <button class="btn btn-spacex">PRIMARY ACTION</button>
+                <button class="btn btn-outline-secondary rounded-0">AUXILIARY</button>
+                <button class="btn btn-danger rounded-0 btn-sm">ABORT MISSION</button>
+                <button class="btn btn-warning rounded-pill px-4 text-black">READY FOR LAUNCH</button>
+                <button class="btn btn-info rounded-0 text-white"><i class="bi bi-info-circle me-1"></i>
+                    TELEMETRY</button>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <span class="badge bg-white text-black">ACTIVE</span>
+                <span class="badge border border-secondary text-secondary">ARCHIVED</span>
+                <span class="badge bg-success">ORBITAL</span>
+                <span class="badge bg-danger rounded-pill">CRITICAL</span>
+                <span class="badge bg-warning text-dark">WARNING</span>
+                <span class="badge bg-info text-dark">INFO</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- About Modal -->
+    <div class="modal fade shadow" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="infoModalLabel">ABOUT SPACEX</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was
+                        founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to
+                        live on other planets.</p>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-spacex">Read More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Footer -->
+    <footer class="mt-auto">
+        <div class="container text-center">
+            <p class="mb-3 text-secondary">&copy; 2024 SpaceX Masterpiece. All rights reserved.</p>
+            <div class="d-flex justify-content-center gap-4 h4">
+                <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-youtube"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" class="btn"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
